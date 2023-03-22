@@ -1,0 +1,26 @@
+Q.1-Explain and give an example of string templet class ?
+
+A string template class is a class that allows for the creation of strings with placeholders that can be filled in with values at runtime. These templates can be useful for generating dynamic strings that depend on user input or other variables.
+Here is an example of a string template class in Python:
+
+class StringTemplate:
+    def __init__(self, template_string):
+        self.template_string = template_string
+        
+    def fill(self, **kwargs):
+        return self.template_string.format(**kwargs)
+     
+This class takes a string as input when it is initialized and stores it as an instance variable. The fill method takes keyword arguments as input and uses them to replace placeholders in the template string using Python's built-in str.format method.
+Here's an example usage of the StringTemplate class:
+
+greeting_template = StringTemplate("Namaskaram, {name}!")
+greeting = greeting_template.fill(name="Krishna")
+print(greeting)
+
+In this example, we create a StringTemplate object with the template string "Namaskaram, {name}!".
+We then call the fill method on this object with the keyword argument name="Krishna", 
+which replaces the {name} placeholder in the template string with the value "Krishna". 
+The resulting string, "Namaskaram, Krishna!", is then printed to the console.
+
+
+
